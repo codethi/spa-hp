@@ -14,13 +14,15 @@ export function Home() {
   return (
     <section className="cards">
       {chars.map((char) => {
-        <ListChars
-          key={char.id}
-          name={char.name}
-          house={char.house}
-          actor={char.actor}
-          image={char.image}
-        />
+        return (
+          <ListChars
+            key={char.id}
+            name={char.name}
+            house={char.house}
+            actor={char.actor}
+            image={char.image}
+          />
+        );
       })}
     </section>
   );
