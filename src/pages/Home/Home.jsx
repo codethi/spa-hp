@@ -10,19 +10,16 @@ export function Home() {
   }, [chars]);
 
   return (
-    <>
-      <div className="cards">
-        {chars.map((char) => {
-            {console.log(char)}
-          <ListChars
-            name={char.name}
-            house={char.house}
-            actor={char.actor}
-            image={char.image}
-            key={char.id}
-          />;
-        })}
-      </div>
-    </>
+    <section className="cards">
+      {chars.map((char) => {
+        <ListChars
+          name={char.name}
+          house={char.house}
+          actor={char.actor}
+          image={char.image}
+          key={char.id}
+        />;
+      })}
+    </section>
   );
 }
