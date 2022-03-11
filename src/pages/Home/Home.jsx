@@ -16,7 +16,8 @@ export function Home() {
       {chars.map((char) => {
         return (
           <CardChars
-            key={char.id}
+            key={`char_${char.id}`}
+            id={char.id}
             name={char.name}
             house={char.house}
             actor={char.actor}
