@@ -1,8 +1,8 @@
-import "./ListChars.css";
+import "./CardChars.css";
 
-export function ListChars(props) {
+export function CardChars(props) {
   return (
-    <div className="card" key={props.key}>
+    <div className="card">
       <img src={props.image} alt="Imagem do personagem" />
       <div className="cardText">
         <h2>{props.name}</h2>

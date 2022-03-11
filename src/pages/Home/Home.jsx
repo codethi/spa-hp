@@ -1,4 +1,4 @@
-import { ListChars } from "../../components/ListChars/ListChars";
+import { CardChars } from "../../components/CardChars/CardChars";
 import { useState, useEffect } from "react";
 import { characters } from "../../mocks/characters";
 
@@ -15,7 +15,7 @@ export function Home() {
     <section className="cards">
       {chars.map((char) => {
         return (
-          <ListChars
+          <CardChars
             key={char.id}
             name={char.name}
             house={char.house}

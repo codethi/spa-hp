@@ -4,3 +4,10 @@ section.cards {
   justify-content: center;
   margin: 5rem 15rem;
 }
+
+@media (max-width: 955px) {
+
+  section.cards {
+    margin: 0;
+  }
+}
