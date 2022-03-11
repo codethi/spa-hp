@@ -12,6 +12,7 @@ export function Home() {
   return (
     <section className="cards">
       {chars.map((char) => {
+
         <ListChars
           name={char.name}
           house={char.house}
