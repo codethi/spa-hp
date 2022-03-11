@@ -1,0 +1,26 @@
+div.card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25rem;
+  padding: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: .5rem;
+}
+
+img {
+  width: 30%;
+  border-radius: .5rem;
+}
+
+div.cardText{
+    padding-left: 1.5rem;
+}
+
+h2 {
+  
+}
+
+span {
+
+}
+
