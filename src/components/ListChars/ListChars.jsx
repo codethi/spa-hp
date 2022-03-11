@@ -1,7 +1,6 @@
 import "./ListChars.css";
 
 export function ListChars(props) {
-  console.log(props)
   return (
     <div className="card" key={props.id}>
       <img src={props.image} alt="Imagem do personagem" />
