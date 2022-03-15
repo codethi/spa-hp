@@ -1,0 +1,11 @@
+span.message {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  color: #005300;
+  background-color: #e6ffc2;
+  font-weight: bold;
+  border-radius: .3rem;
+  padding: 1rem;
+  z-index: 9999;
+}

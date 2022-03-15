@@ -2,35 +2,45 @@ import { CardChars } from "../../components/CardChars/CardChars";
 import { useState, useEffect, useContext } from "react";
 /* import { characters } from "../../mocks/characters"; Dados em mock para o GET */
 import { api } from "../../services/api";
-import { ModalNewCharater } from "../../components/ModalNewCharater/ModalNewCharater";
-/* import { CharacterContext } from "../../CharactersContext"; */
+import { ModalNewCharacter } from "../../components/ModalNewCharacter/ModalNewCharacter";
+import { Message } from "../../components/Message/Message";
 
 import "./Home.css";
 
 export function Home() {
   const [chars, setChars] = useState([]);
+  const [refreshChars, setRefreshChars] = useState(0);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     api.get("/all").then((reponse) => setChars(reponse.data));
-  }, []);
+  }, [refreshChars]);
 
-  /* const chars = useContext(CharacterContext) */
-
-  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
+  const [isNewCharacterModalOpen, setIsNewCharacterModalOpen] =
     useState(false);
 
-  function handleOpenNewTransactionModal() {
-    setIsNewTransactionModalOpen(true);
+  function handleOpenNewCharacterModal() {
+    setIsNewCharacterModalOpen(true);
   }
 
-  function handleCloseNewTransactionModal() {
-    setIsNewTransactionModalOpen(false);
+  function handleCloseNewCharacterModal() {
+    setIsNewCharacterModalOpen(false);
   }
+
+  const onChangeCharacters = ({ data }) => {
+    <Message
+      text={setMessage(`Personagem ${data.name} criado com suacesso! `)}
+    />;
+    setRefreshChars(refreshChars + 1);
+  };
+
 
   return (
     <section>
+      {/* <Message text={message} /> */}
+
       <section className="buttonCreate">
-        <button type="button" onClick={handleOpenNewTransactionModal}>
+        <button type="button" onClick={handleOpenNewCharacterModal}>
           Criar Personagem
         </button>
       </section>
@@ -45,15 +55,16 @@ export function Home() {
               house={char.house}
               actor={char.actor}
               image={char.image}
+              onEdit={onChangeCharacters}
             />
           );
         })}
       </section>
 
-      <ModalNewCharater
-        isOpen={isNewTransactionModalOpen}
-        closeModal={handleCloseNewTransactionModal}
-        setChars={setChars}
+      <ModalNewCharacter
+        isOpen={isNewCharacterModalOpen}
+        closeModal={handleCloseNewCharacterModal}
+        onCreate={onChangeCharacters}
       />
     </section>
   );

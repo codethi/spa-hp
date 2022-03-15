@@ -1,0 +1,30 @@
+.btns{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+button.edit-modal {
+  display: flex;
+  justify-content: center;
+  
+  background-color: #181818;
+  color: #fbba0b;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 1px solid #fbba0b;
+  width: 40%;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  
+}
+
+button.edit-modal:hover {
+  background-color: #fbba0b;
+  color: #181818;
+}
+
+

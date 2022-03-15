@@ -1,4 +1,4 @@
-import "./ModalNewCharater.css";
+import "./ModalNewCharacter.css";
 import Modal from "react-modal";
 import { BiX } from "react-icons/bi";
 import { useState } from "react";
@@ -7,11 +7,11 @@ import { Loading } from "../Loading/Loading";
 
 Modal.setAppElement("#root");
 
-export function ModalNewCharater({ isOpen, closeModal, setChars }) {
-  const [values, setVelues] = useState();
+export function ModalNewCharacter({ isOpen, closeModal, onCreate }) {
+  const [values, setValues] = useState();
 
   const handleChangeValues = (value) => {
-    setVelues((prevValue) => ({
+    setValues((prevValue) => ({
       ...prevValue,
       [value.target.name]: value.target.value,
     }));
@@ -19,9 +19,8 @@ export function ModalNewCharater({ isOpen, closeModal, setChars }) {
 
   const handleCreateNewCharacter = async (event) => {
     event.preventDefault();
-    <Loading/>
     const response = await api.post("/create", values);
-    setChars(response)
+    onCreate(response);
     closeModal();
   };
 
@@ -71,7 +70,7 @@ export function ModalNewCharater({ isOpen, closeModal, setChars }) {
             onChange={handleChangeValues}
           />
 
-          <button type="submit">Cadastrar</button>
+          <button className="new-modal"type="submit">Cadastrar</button>
         </form>
       </Modal>
     </>
