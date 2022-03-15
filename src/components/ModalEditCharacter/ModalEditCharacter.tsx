@@ -4,6 +4,7 @@ import { useState } from "react";
 import { api } from "../../services/api";
 import { BiX } from "react-icons/bi";
 import { Loading } from "../Loading/Loading";
+import { ModalConfirmDelete } from '../ModalConfirmDelete/ModalConfirmDelete'
 
 export function ModalEditCharacter(props) {
   const [editValues, setEditValues] = useState({
@@ -13,6 +14,19 @@ export function ModalEditCharacter(props) {
     image: props.image,
     actor: props.actor,
   });
+
+  const [isDeleteCharacterModalOpen, setIsDeleteCharacterModalOpen] =
+    useState(false);
+
+  function handleOpenDeleteCharacterModal(event) {
+    event.preventDefault();
+    props.closeModal();
+    setIsDeleteCharacterModalOpen(true);
+  }
+
+  function handleCloseDeleteCharacterModal() {
+    setIsDeleteCharacterModalOpen(false);
+  }
 
   const handleChangeValues = (value) => {
     setEditValues((prevValues) => ({
@@ -32,11 +46,6 @@ export function ModalEditCharacter(props) {
     props.onEdit(response);
     props.closeModal();
   };
-
-  const handleDeleteCharacter = async (event) => {
-    event.preventDefault();
-    
-  }
 
   return (
     <>
@@ -90,11 +99,20 @@ export function ModalEditCharacter(props) {
 
           <div className="btns">
             <button className="edit-modal" onClick={handleUpdateCharacter}>Atualizar</button>
-            <button className="edit-modal" onClick={handleDeleteCharacter}>Excluir</button>
+            <span className="divider">ou</span>
+            <button className="edit-modal" onClick={handleOpenDeleteCharacterModal}>Excluir</button>
           </div>
 
         </form>
       </Modal>
+
+      <ModalConfirmDelete
+        isOpen={isDeleteCharacterModalOpen}
+        closeModal={handleCloseDeleteCharacterModal}
+        onEdit={props.onEdit}
+        name={props.name}
+        id={props.id}
+      />
     </>
   );
 }

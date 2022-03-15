@@ -16,7 +16,7 @@ export function CardChars(props) {
 
   return (
     <>
-      <div className="card" onClick={handleOpenEditCharacterModal}>
+      <div className="card" data-tooltip="Clique no card para editar ou excluir"  onClick={handleOpenEditCharacterModal}>
         <img src={props.image} alt="Imagem do personagem" />
         <div className="cardText">
           <h2>{props.name}</h2>
