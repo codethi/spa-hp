@@ -1,6 +1,7 @@
 nav {
   padding: 1rem;
   background-color: #242424;
+  flex-shrink: 0;
 }
 
 ul {

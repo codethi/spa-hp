@@ -6,7 +6,75 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: #1a1a1a;
   color: #fff;
+}
+
+#root{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+html::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #1a1a1a;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: #1a1a1a;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #242424;
+}
+
+.overley-react-modal {
+  background-color: #00000090;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-react-modal {
+  width: 100%;
+  max-width: 500px;
+  background-color: #1a1a1a;
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.3rem;
+}
+
+.close-button {
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.close-button:hover{
+  color: #fbba0b;
 }

@@ -1,42 +1,60 @@
+import { useState } from "react";
 import "./Form.css";
 
+import {characters} from "../../mocks/characters";
+
 export function Form() {
+  const [values, setVelues] = useState();
+
+  const changeValues = (value) => {
+    setVelues((prevValue) => ({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }));
+  };
+
+  const clickButton = () => {
+    characters.push(values);
+    console.log(characters);
+  };
+
   return (
     <section className="form-space">
-      <form action="">
-        <label htmlFor="name">Nome</label>
+      <form>
+
         <input
           type="text"
           id="name"
           placeholder="Nome do personagem"
           name="name"
+          onChange={changeValues}
         />
 
-        <label htmlFor="house">Casa</label>
         <input
           type="text"
           id="house"
           placeholder="Casa do personagem"
           name="house"
+          onChange={changeValues}
         />
 
-        <label htmlFor="actor">Artista</label>
         <input
           type="text"
           id="actor"
           placeholder="Artista do personagem"
           name="actor"
+          onChange={changeValues}
         />
 
-        <label htmlFor="image">Link da Imagem</label>
         <input
           type="text"
           id="image"
           placeholder="Link da Imagem do personagem"
           name="image"
+          onChange={changeValues}
         />
 
-        <button type="submit">Cadastrar</button>
+        <button onClick={clickButton}>Cadastrar</button>
       </form>
     </section>
   );

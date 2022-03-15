@@ -3,6 +3,30 @@ section.cards {
   flex-wrap: wrap;
   justify-content: center;
   margin: 5rem 15rem;
+  
+}
+
+section.buttonCreate{
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 2rem 0 0;
+}
+
+section.buttonCreate button{
+  background-color: #1A1A1A;
+  color: #fbba0b;
+  border: solid 1px #fbba0b;
+  padding: .8rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: .3rem;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+section.buttonCreate button:hover{
+  background-color: #fbba0b;
+  color: #1A1A1A;
 }
 
 @media (max-width: 955px) {

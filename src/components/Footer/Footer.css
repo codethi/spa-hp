@@ -1,6 +1,7 @@
 footer{
     padding: 3rem;
     background-color: #242424;
+    flex-shrink: 0;
 }
 footer p{
     text-align: center;

@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Home} from "./pages/Home/Home"
-import {Register} from "./pages/Register/Register"
+import { Home } from "./pages/Home/Home";
+import { About } from "./pages/About/About";
+import { Nav } from "./components/Nav/Nav";
+import { Footer } from "./components/Footer/Footer";
+/* import { CharacterProvider } from "./CharactersContext"; */
 
 export function AppRoutes() {
-  return(
+  return (
     <Router>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-        </Routes>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
     </Router>
-  ) 
+  );
 }
