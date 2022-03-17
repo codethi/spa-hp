@@ -1,6 +1,4 @@
 import "./About.css";
-import Hogwarts from "../../images/hogwarts.png";
-import project from "../../images/project.png";
 
 export function About() {
   return (
