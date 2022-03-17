@@ -8,7 +8,6 @@ export function About() {
       <h1 className="about">O Universo Harry Potter</h1>
 
       <div className="content-text">
-        <img src={Hogwarts} className="img-hogwarts" alt="Brasão de Hogwarts" />
         <div className="text">
           <p className="about-text">
             O Universo Harry Potter é uma realidade fictícia e paralela criada
@@ -31,7 +30,6 @@ export function About() {
            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi sed repudiandae, fugiat ad similique corrupti, quo pariatur amet dolorem libero perferendis distinctio suscipit, aliquam ullam iure ratione optio eos molestiae tenetur inventore cum! Numquam obcaecati explicabo maxime assumenda, aliquid deserunt, sed magnam optio animi asperiores aliquam, error rem doloremque odit dolor? Nulla libero porro accusamus iure molestias accusantium ad. Natus cupiditate cum illo expedita modi, nihil perspiciatis vel aliquam temporibus ratione nobis, consequatur corrupti nesciunt cumque. Accusantium distinctio autem harum enim id voluptatum tempora aliquid explicabo, temporibus doloribus quod vel officia aspernatur rem ab! Quasi a eos dicta itaque quisquam.
           </p>
         </div>
-        <img src={project} alt="Animação de uma Projeto Web" />
       </div>
     </section>
   );
