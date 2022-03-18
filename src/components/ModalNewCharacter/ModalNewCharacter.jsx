@@ -70,7 +70,9 @@ export function ModalNewCharacter({ isOpen, closeModal, onCreate }) {
             onChange={handleChangeValues}
           />
 
-          <button className="new-modal"type="submit">Cadastrar</button>
+          <button className="new-modal" type="submit">
+            Cadastrar
+          </button>
         </form>
       </Modal>
     </>

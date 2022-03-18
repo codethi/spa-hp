@@ -14,7 +14,7 @@ form input {
   width: 100%;
   padding: 0.5rem;
   outline: none;
-  border: 1px solid rgb(78, 78, 78);
+  border: 1px solid #4e4e4e;
   border-radius: 0.2rem;
   margin-bottom: 0.8rem;
 }
